@@ -50,7 +50,7 @@ function App() {
            placeholder='Password'
            readOnly 
            ref={paswordRef}/>
-           <button  className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
+           <button onClick={copyPasswordToclipBoard} className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
       </div>
       <div className='flex text-sm font-bold gap-x-2 '>
         <div className='flex items-center gap-x-1'>
