@@ -11,7 +11,9 @@ function App() {
   const paswordRef = useRef(null);
 
   const copyPasswordToclipBoard = useCallback(()=>{
-
+  paswordRef.current?.select();
+  paswordRef.current?.setSelectionRange(0,99);
+  window.navigator.clipboard.writeText(pasword)
   },[pasword])
 
   const paswordGenerator = useCallback(()=>{
@@ -46,8 +48,9 @@ function App() {
            value={pasword} 
            className='outline-none w-full py-1 px-3 '
            placeholder='Password'
-           readOnly/>
-           <button className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
+           readOnly 
+           ref={paswordRef}/>
+           <button  className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
       </div>
       <div className='flex text-sm font-bold gap-x-2 '>
         <div className='flex items-center gap-x-1'>
