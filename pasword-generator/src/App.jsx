@@ -1,4 +1,4 @@
-import { useState ,useCallback,useEffect } from 'react'
+import { useState ,useCallback,useEffect,useRef } from 'react'
 
 import './App.css'
 
@@ -7,6 +7,12 @@ function App() {
   const [numberAllowed,setnumberAllowed] = useState(false);
   const [charAllowed , setcharAllowed] = useState(false);
   const [pasword,setPasword] = useState("")
+
+  const paswordRef = useRef(null);
+
+  const copyPasswordToclipBoard = useCallback(()=>{
+
+  },[pasword])
 
   const paswordGenerator = useCallback(()=>{
     
